@@ -1,0 +1,26 @@
+.footer {
+    z-index: 9999;
+    position: relative;
+    padding: 22px;
+}
+
+.footerOuter {
+    max-width: 1300px;
+    position: relative;
+    margin: auto;
+}
+
+.footerInner {
+    padding: 0px 20px;
+    height: 56px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 182px auto 36px;
+    align-content: center;
+    background-color: #202020;
+    border-radius: 99px;
+}
+
+.footerDiscord {
+    margin-top: 7px;
+}

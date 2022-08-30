@@ -1,0 +1,29 @@
+{
+    "check_for_updates": true,
+    "auto_update": true,
+    "video_source": "capture_device",
+    "capture_device": 0,
+    "crop": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "current_route": "",
+    "show_preview": true,
+    "livesplit_port": 16834,
+    "fullscreen": false,
+    "window_position": null,
+    "window_size": [
+        1000,
+        700
+    ],
+    "dashboard_splitter_1": [
+        350,
+        500
+    ],
+    "route_splitter_1": [
+        350,
+        500
+    ]
+}

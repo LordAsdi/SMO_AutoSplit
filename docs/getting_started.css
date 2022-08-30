@@ -1,0 +1,135 @@
+h1 {
+    margin: 100px auto;
+}
+
+h2 {
+    font-size: 20pt;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.contentGetStarted {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.getStartedContainer {
+    padding: 40px;
+    background-color: #131212;
+    border: 2px solid #3c3c3c;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.getStartedContainer:last-of-type {
+    margin-bottom: 0px;
+}
+
+.getStartedDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.getStartedDiv section {
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height:22px;
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.getStartedDiv img {
+    max-width: min(100%, 500px);
+    transition: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.getStartedDiv video {
+    max-width: min(100%, 500px);
+    transition: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.getStartedDiv img:hover {
+    transform: scale(1.8);
+    z-index: 10000;
+}
+
+.getStartedDiv video:hover {
+    transform: scale(1.8);
+    z-index: 10000;
+}
+
+.getStartedDiv a {
+    color: #5c93fa;
+    text-decoration: none;
+}
+
+.divLeft {
+    width: 100%;
+    padding-right: 20px;
+}
+
+.divRight {
+    align-items: flex-end;
+}
+
+.spacer {
+    height: 50px;
+    display: none;
+}
+
+@media only screen and (max-width: 1350px) {
+    h1 {
+        font-size: min(9vw, 35pt);
+    }
+
+    h2 {
+        font-size: min(5.5vw, 18pt);
+    }
+
+    .getStartedContainer {
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .getStartedDiv {
+        padding-right: 0px;
+        align-self: center;
+        width: 100%;
+    }
+
+    .getStartedDiv * {
+        align-self: center;
+    }
+
+    .getStartedDiv h2 {
+        align-self: start;
+    }
+
+    .getStartedDiv section {
+        align-self: start;
+    }
+
+    .getStartedDiv img:hover {
+        transform: scale(1.4);
+    }
+    
+    .getStartedDiv video:hover {
+        transform: scale(1.4);
+    }
+
+    .spacer {
+        display: block;
+    }
+}

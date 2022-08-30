@@ -1,0 +1,54 @@
+h1 {
+    margin: 100px auto;
+}
+
+h2 {
+    font-size: 16pt;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.contentChangelog {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contentChangelog section {
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height:22px;
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.versionContainer {
+    padding: 20px;
+    padding-bottom: 10px;
+    background-color: #131212;
+    border: 2px solid #3c3c3c;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.versionContainer:last-of-type {
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 1350px) {
+    h1 {
+        font-size: min(10vw, 35pt);
+    }
+
+    h2 {
+        font-size: min(5vw, 18pt);
+    }
+}

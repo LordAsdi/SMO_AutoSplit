@@ -1,0 +1,6 @@
+PyQt5==5.15.7
+jsonschema==4.14.0
+opencv-contrib-python==3.4.13.47
+onnxruntime==1.12.1
+psutil==5.9.1
+PyUpdater==4.0
