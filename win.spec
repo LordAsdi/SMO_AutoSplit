@@ -4,6 +4,7 @@ block_cipher = None
 
 added_files = [
                 ('models', 'models'),
+                ('routes', 'routes'),
                 ('ui/resources', 'ui/resources'),
                 ('.version', '.'),
                 ('defaults.json', '.')

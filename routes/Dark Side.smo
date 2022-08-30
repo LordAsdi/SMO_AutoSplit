@@ -1,0 +1,381 @@
+{
+    "version": "0.1.0beta",
+    "name": "Dark Side",
+    "start_condition": "start_button",
+    "splits": [
+        {
+            "name": "Cap 1",
+            "type": "cap_end",
+            "components": [
+                {
+                    "name": "cap_end",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Cascade 1",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Sand",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Lake 1",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Wooded",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Cloud",
+            "type": "cutscene_skip",
+            "components": [
+                {
+                    "name": "cutscene_skip",
+                    "activations": 6,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Lost 1",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Metro Night",
+            "type": "moon_multi",
+            "components": [
+                {
+                    "name": "moon_multi",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Metro Day",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Snow",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Seaside",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Luncheon",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Ruined",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Bowsers 1",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Moon",
+            "type": "moon_end",
+            "components": [
+                {
+                    "name": "moon_end",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Mushroom 1",
+            "type": "world_map_fadeout",
+            "components": [
+                {
+                    "name": "world_map_fadeout",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Cap 2",
+            "type": "world_map_fadeout",
+            "components": [
+                {
+                    "name": "world_map_fadeout",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Lake 2",
+            "type": "world_map_fadeout",
+            "components": [
+                {
+                    "name": "world_map_fadeout",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Cascade 2",
+            "type": "black_screen",
+            "components": [
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 20
+                }
+            ],
+            "split": true,
+            "reset_moon_count": false
+        },
+        {
+            "name": "Bowsers 2",
+            "type": "world_map_fadeout",
+            "components": [
+                {
+                    "name": "world_map_fadeout",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Lost 2",
+            "type": "world_map_fadeout",
+            "components": [
+                {
+                    "name": "world_map_fadeout",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Mushroom 2",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Dark Side",
+            "type": "compass",
+            "components": [
+                {
+                    "name": "subarea",
+                    "activations": 8,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "compass",
+                    "activations": 3,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        }
+    ]
+}
