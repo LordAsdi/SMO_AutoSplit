@@ -760,6 +760,9 @@ class ComponentPreview(QScrollArea):
         self.components = components
         self.clear()
 
+        if components is None:
+            return
+
         for i, component in enumerate(components):
             icon_path = get_icon_path(component.name)
 
