@@ -9,8 +9,8 @@ def preprocess(image):
     image = cv2.resize(image, (32, 24), interpolation=cv2.INTER_NEAREST)
     # Convert RGB to grayscale
     image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    # Threshold at 1
-    th, image = cv2.threshold(image, 1, 255, cv2.THRESH_BINARY)
+    # Threshold at 2
+    th, image = cv2.threshold(image, 2, 255, cv2.THRESH_BINARY)
 
     # Detect Contours
     _, contours, hierarchy = cv2.findContours(image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
