@@ -1,3 +1,4 @@
+import xml.etree.ElementTree as ElementTree
 import jsonschema
 import logging
 import copy
@@ -93,6 +94,8 @@ class RouteHandler:
 
     @staticmethod
     def save_route_btn():
+        if os.path.splitext(RouteHandler.route_path)[1] == ".lss":
+            RouteHandler.save_route_as_btn()
         RouteHandler.save_route(RouteHandler.route_path)
 
     @staticmethod
@@ -141,6 +144,10 @@ class RouteHandler:
     @staticmethod
     def load_route(path):
         if path == "":
+            return
+
+        if path.endswith(".lss"):
+            RouteHandler.load_livesplit_splits(path)
             return
 
         print(f"loading route: {path}")
@@ -194,6 +201,7 @@ class RouteHandler:
             return
 
         RouteHandler.route_updated()
+        Config.set_key("current_route", path)
 
     @staticmethod
     def close_route():
@@ -202,6 +210,35 @@ class RouteHandler:
         RouteHandler.route_path = ""
         RouteHandler.route_updated()
         Config.set_key("current_route", "")
+
+    @staticmethod
+    def load_livesplit_splits(path):
+        tree = ElementTree.parse(path)
+        root = tree.getroot()
+
+        RouteHandler.route = Route(Config.version, os.path.splitext(path)[0].split('/')[-1], "", [])
+
+        splits = []
+        subsplits = []
+        for element in root.findall('.//Segment/Name'):
+            if element.text.startswith("-"):
+                subsplits.append(element.text[1:])
+            elif element.text.startswith("{"):
+                subsplit_title = element.text[1:][:element.text.find("}") - 1]
+                subsplits.append(element.text[element.text.find("}") + 1:])
+                for split in subsplits:
+                    splits.append(subsplit_title + " " + split)
+                subsplits.clear()
+            else:
+                splits.append(element.text)
+
+        for split in splits:
+            RouteHandler.route.splits.append(Split(split, "", []))
+
+        RouteHandler.route_path = path
+        RouteHandler.rollback = copy.deepcopy(RouteHandler.route)
+        RouteHandler.route_updated()
+        Config.set_key("current_route", path)
 
     @staticmethod
     def check_unsaved_changes():
@@ -295,8 +332,15 @@ class RouteHandler:
         file_dialog = QFileDialog()
         file_dialog.setFileMode(QFileDialog.ExistingFile)
         file_dialog.setDirectory(os.path.dirname(RouteHandler.route_path))
-        file_dialog.setNameFilters(["SMO AutoSplit Route (*.smo)"])
-        file_dialog.selectNameFilter("SMO AutoSplit Route (*.smo)")
+
+        if save:
+            file_dialog.setNameFilters(["SMO AutoSplit Route (*.smo)"])
+            file_dialog.selectNameFilter("SMO AutoSplit Route (*.smo)")
+        else:
+            file_dialog.setNameFilters(["All Supported Files (*.smo *.lss)", "SMO AutoSplit Route (*.smo)",
+                                        "LiveSplit Splits (*.lss)"])
+            file_dialog.selectNameFilter("All Supported Files (*.smo *.lss)")
+
         if save:
             file_dialog.setWindowTitle("Save Route")
             file_dialog.setAcceptMode(QFileDialog.AcceptSave)
