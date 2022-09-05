@@ -197,17 +197,21 @@ class Autosplitter(QThread):
                     if len(RouteHandler.route.splits) > 0:
                         try:
                             self.current_split = RouteHandler.route.splits[self.current_split_index]
-                        except Exception as e:
-                            logging.exception(e)
-                            return
+                        except:
+                            pass
+
+                if self.current_split is None:
+                    self.sig_status_update.emit("Route has no splits", True)
 
                 if self.current_split is not None:
                     if self.current_component is None:
                         try:
                             self.current_component = self.current_split.components[self.current_component_index]
-                        except Exception as e:
-                            logging.exception(e)
-                            return
+                        except:
+                            pass
+
+                    if self.current_component is None:
+                        self.sig_status_update.emit("Current split has no components", True)
 
                     if self.current_component is not None:
                         if self.moon_count < self.current_component.min_moons:
