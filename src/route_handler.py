@@ -94,12 +94,17 @@ class RouteHandler:
 
     @staticmethod
     def save_route_btn():
-        if os.path.splitext(RouteHandler.route_path)[1] == ".lss":
+        if os.path.splitext(RouteHandler.route_path)[1] == ".lss" or (RouteHandler.route_path == "" and
+                                                                      RouteHandler.route is not None):
             RouteHandler.save_route_as_btn()
         RouteHandler.save_route(RouteHandler.route_path)
 
     @staticmethod
     def save_route_as_btn():
+        if not RouteHandler.route:
+            logging.warning("No route is currently loaded")
+            return
+
         file_path = RouteHandler.open_file(save=True)
 
         if RouteHandler.route is None:
@@ -172,7 +177,7 @@ class RouteHandler:
 
     @staticmethod
     def save_route(path):
-        if not RouteHandler.route:
+        if not RouteHandler.route or RouteHandler.route_path == "":
             logging.warning("No route is currently loaded")
             return
 
