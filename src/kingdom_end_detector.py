@@ -47,7 +47,14 @@ class KingdomEndDetector:
 
         # Odyssey Banner
         if odyssey:
-            if self.odyssey_classifier.update(frame):
+            frame_prep = odyssey_prep.preprocess(frame).transpose((1, 2, 0))
+            # Quick fix for false detections
+            white_count = 0
+            for i in range(12):
+                if np.mean(frame_prep[0:2, i * 8:i * 8 + 8]) > 0.95:
+                    white_count += 1
+
+            if self.odyssey_classifier.update(frame) and white_count > 6:
                 self.kingdom_end = True
 
         # Cap Kingdom
