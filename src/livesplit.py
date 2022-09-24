@@ -55,7 +55,7 @@ class Livesplit(QThread):
 
     def check_reset(self):
         state = self.get_timer_phase()
-        if state == "NotRunning" and self.prev_state == "Running":
+        if state == "NotRunning" and (self.prev_state == "Running" or self.prev_state == "Ended"):
             self.timer = datetime.timedelta(0, 0, 0, 0, 0, 0)
             self.sig_timer_reset.emit()
         self.prev_state = state
