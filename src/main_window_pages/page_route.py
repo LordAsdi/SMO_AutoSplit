@@ -73,6 +73,7 @@ class PageRoute(QObject):
             [["world_map_fadeout"], icon_path + "globe.png", video_path + "world map.avi"],
             [["cutscene_skip"], icon_path + "cutscene.png", video_path + "cutscene.avi"],
             [["black_screen"], icon_path + "monitor.png", video_path + "black screen.avi"],
+            [["white_screen"], icon_path + "monitor_white.png", video_path + "white screen.avi"],
             [["subarea"], icon_path + "door.png", video_path + "subarea.avi"],
             [["compass"], icon_path + "compass.png", video_path + "compass.avi"]
         ]

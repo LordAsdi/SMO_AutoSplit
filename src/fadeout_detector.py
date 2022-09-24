@@ -27,6 +27,8 @@ class FadeoutDetector:
         self.subarea_fadeout_checked = False
         self.black_screen = False
         self.black_screen_checked = False
+        self.white_screen = False
+        self.white_screen_checked = False
         self.last_fadeout = time.time()
 
         # Parameters
@@ -37,8 +39,10 @@ class FadeoutDetector:
         self.med_setpoint = np.asarray([55 * self.scale, 55 * self.scale, 0, 0])
         self.subarea_thresh = 10
         self.cutscene_thresh = 5
-        self.blackscreen_avg_thresh = 8
-        self.blackscreen_std_thresh = 2
+        self.black_screen_avg_thresh = 8
+        self.black_screen_std_thresh = 2
+        self.white_screen_avg_thresh = 235
+        self.white_screen_std_thresh = 2
         self.fadeout_cooldown = 0.5
 
     def load_models(self, opts):
@@ -143,7 +147,7 @@ class FadeoutDetector:
         avg = np.average(frame_bw)
         std_dev = np.std(frame_bw)
 
-        if avg < self.blackscreen_avg_thresh and std_dev < self.blackscreen_std_thresh:
+        if avg < self.black_screen_avg_thresh and std_dev < self.black_screen_std_thresh:
             self.black_screen = True
         else:
             self.black_screen = False
@@ -151,6 +155,25 @@ class FadeoutDetector:
 
         if self.black_screen and not self.black_screen_checked:
             self.black_screen_checked = True
+            return True
+        else:
+            return False
+
+    def check_white_screen(self, frame):
+        cv2.rectangle(frame, (21, 442), (171, 465), (255, 255, 255), -1)
+        frame = cv2.resize(frame, (0, 0), fx=0.1, fy=0.1, interpolation=cv2.INTER_LINEAR)
+        frame_bw = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+        avg = np.average(frame_bw)
+        std_dev = np.std(frame_bw)
+
+        if avg > self.white_screen_avg_thresh and std_dev < self.white_screen_std_thresh:
+            self.white_screen = True
+        else:
+            self.white_screen = False
+            self.white_screen_checked = False
+
+        if self.white_screen and not self.white_screen_checked:
+            self.white_screen_checked = True
             return True
         else:
             return False

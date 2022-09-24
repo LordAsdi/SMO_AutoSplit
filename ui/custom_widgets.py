@@ -24,6 +24,8 @@ def get_icon_path(component_name):
         icon_path += "door.png"
     elif component_name == "black_screen":
         icon_path += "monitor.png"
+    elif component_name == "white_screen":
+        icon_path += "monitor_white.png"
     elif component_name == "kingdom_end":
         icon_path += "castle.png"
     elif component_name == "world_map_fadeout":

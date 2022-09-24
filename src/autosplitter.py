@@ -272,6 +272,11 @@ class Autosplitter(QThread):
                                 if self.fadeout_detector.check_black_screen(frame):
                                     self.component_activated()
                                     print("Black Screen")
+                            elif self.current_component.name == "white_screen":
+                                self.sig_status_update.emit("Waiting for white screen", True)
+                                if self.fadeout_detector.check_white_screen(frame):
+                                    self.component_activated()
+                                    print("White Screen")
                             elif self.current_component.name == "compass":
                                 self.sig_status_update.emit("Waiting for compass disappear", True)
                                 self.compass_detector.update(frame)
