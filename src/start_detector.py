@@ -11,6 +11,7 @@ class StartDetector:
         self.prev_ok_btn = False
         self.ok_btn_time = 0
         self.date_time_border = False
+        self.date_time_time = 0
 
         # Parameters
         self.lower_hue = 170
@@ -62,6 +63,13 @@ class StartDetector:
 
         if date_time_ok:
             self.prev_ok_btn = self.ok_btn
+
+            # Detect date time overlay
+            top_avg = frame[:160, :].mean(axis=0).mean(axis=0).mean(axis=0)
+            bot_avg = frame[170:, :].mean(axis=0).mean(axis=0).mean(axis=0)
+
+            if top_avg * 2 < bot_avg:
+                self.date_time_time = time.time()
 
             # Detect ok button
             frame_crop = frame[280:340, 501:601]
@@ -156,7 +164,7 @@ class StartDetector:
         return True
 
     def check_date_time_ok(self):
-        if self.date_time_border and time.time() < self.ok_btn_time + 0.06:
+        if time.time() < self.date_time_time + 0.5 and self.date_time_border and time.time() < self.ok_btn_time + 0.06:
             return True
 
         return False
