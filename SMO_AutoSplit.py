@@ -352,6 +352,8 @@ def load_fonts():
 if __name__ == "__main__":
     print("main")
 
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
     # Clear log
     appdata = os.path.join(os.path.expandvars(r'%LOCALAPPDATA%'), "Lord Asdi", "SMO AutoSplit")
     log_path = os.path.join(appdata, "application.log")
