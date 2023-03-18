@@ -5,17 +5,19 @@ Neural network based auto splitter for Super Mario Odyssey.
 <img src="docs/videos/application_demo.gif" width="800" align="center"/>
 
 ## Table of Contents
-- [Features](#features)
-- [Compatibility](#compatibility)
-- [Requirements](#requirements)
-- [Installation](#installation)
-  - [Pre-Built](#pre-built)
-  - [From source](#from-source)
-- [Getting started](#getting-started)
-- [Split types](#split-types)
-- [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
-- [Author](#author)
+- [ SMO AutoSplit](#-smo-autosplit)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Compatibility](#compatibility)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+    - [Pre-Built](#pre-built)
+    - [From source](#from-source)
+  - [Getting started](#getting-started)
+  - [Split types](#split-types)
+  - [Troubleshooting](#troubleshooting)
+  - [Credits](#credits)
+  - [Author](#author)
 
 ## Features
 **Minimal setup required:** There's no need to create split images like with [AutoSplit](https://github.com/Toufool/Auto-Split). All split types are ready to use without any setup.
@@ -63,10 +65,11 @@ Check out the [getting started page](https://lordasdi.github.io/SMO_AutoSplit/ge
 |-|-|-|
 |**Cap kingdom end** <br/> <img width=249 src="docs/videos/kingdom cap.gif"/>|**Kingdom end** <br/> <img width=249 src="docs/videos/kingdom odyssey.gif"/>|**Moon kingdom end** <br/> <img width=249 src="docs/videos/kingdom moon.gif"/>|
 |**Odyssey banner** <br/> <img width=249 src="docs/videos/odyssey.gif"/>|**World map fadeout** <br/> <img width=249 src="docs/videos/world map.gif"/>|**Cutscene skip** <br/> <img width=249 src="docs/videos/cutscene.gif"/>|
-|**Black screen** <br/> <img width=249 src="docs/videos/black screen.gif"/>|**Subarea fadeout** <br/> <img width=249 src="docs/videos/subarea.gif"/>|**Compass disappear** <br/> <img width=249 src="docs/videos/compass.gif"/>|
+|**Black screen** <br/> <img width=249 src="docs/videos/black screen.gif"/>|**White screen** <br/> <img width=249 src="docs/videos/white screen.gif"/>|**Subarea fadeout** <br/> <img width=249 src="docs/videos/subarea.gif"/>|
+|**Compass disappear** <br/> <img width=249 src="docs/videos/compass.gif"/>|||
 
 ## Troubleshooting
-If you have problems with the auto splitter, check out the [faq section](https://lordasdi.github.io/SMO_AutoSplit/faq.html) on the website. Otherwise you can join the official [discord server](https://discord.gg/tuXWe4S7r2) to ask for help or open an issue [here](https://github.com/LordAsdi/SMO_AutoSplit/issues) on GitHub.
+If you have problems with the auto splitter, check out the [faq section](https://lordasdi.github.io/SMO_AutoSplit/faq.html) on the website. Otherwise you can join the official [discord server](https://discord.gg/tuXWe4S7r2) to ask for help or [open an issue](https://github.com/LordAsdi/SMO_AutoSplit/issues) on GitHub.
 
 The application log file can be found in `C:/Users/User/AppData/Local/Lord Asdi/SMO AutoSplit/application.log`
 
