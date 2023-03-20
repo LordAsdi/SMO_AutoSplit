@@ -99,16 +99,18 @@ class MoonDetector:
                 diff = cv2.absdiff(moon_frame, self.prev_moon_frame).mean()
                 if not self.moon_get and not self.story_get:
                     moon_count = self.moon_count_classifier.update(frame)
-                    if self.first_moon_count == 0:
-                        if moon_count == 1 and diff > self.moon_get_diff_thresh:
-                            self.set_moon_get(is_story=self.story_get_trigger)
-                    elif 0 < self.first_moon_count < 20 and diff > self.moon_get_diff_thresh:
-                        if moon_count == self.first_moon_count + 1:
-                            self.set_moon_get(is_story=self.story_get_trigger)
-                    elif self.first_moon_count > 19:
-                        ok, bbox = self.moon_tracker.update(moon_frame)
-                        if moon_count == 20 and ok and int(bbox[1]) < 8 and diff > self.moon_get_diff_thresh:
-                            self.set_moon_get(is_story=self.story_get_trigger)
+                    if diff > self.moon_get_diff_thresh:
+                        if not moon or self.moon_get_classifier.update(frame):
+                            if self.first_moon_count == 0:
+                                if moon_count == 1:
+                                    self.set_moon_get(is_story=self.story_get_trigger)
+                            elif 0 < self.first_moon_count < 20:
+                                if moon_count == self.first_moon_count + 1:
+                                    self.set_moon_get(is_story=self.story_get_trigger)
+                            elif self.first_moon_count > 19:
+                                ok, bbox = self.moon_tracker.update(moon_frame)
+                                if moon_count == 20 and ok and int(bbox[1]) < 8:
+                                    self.set_moon_get(is_story=self.story_get_trigger)
 
                 self.prev_moon_frame = moon_frame
 
