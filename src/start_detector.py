@@ -24,7 +24,7 @@ class StartDetector:
             frame_bw = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
             text_crop = frame_bw[179:179 + 53, 93:93 + 30]
             ret, text_crop_th = cv2.threshold(text_crop, 128, 255, cv2.THRESH_BINARY)
-            _, contours, hirearchy = cv2.findContours(255 - text_crop_th, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            contours, hirearchy = cv2.findContours(255 - text_crop_th, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
             # Detect cappy
             cappy_crop = frame[209:210, 74:75]
