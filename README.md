@@ -6,23 +6,24 @@ Neural network based auto splitter for Super Mario Odyssey.
 
 ## Table of Contents
 - [ SMO AutoSplit](#-smo-autosplit)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Compatibility](#compatibility)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
-    - [Pre-Built](#pre-built)
-    - [From source](#from-source)
-  - [Getting started](#getting-started)
-  - [Split types](#split-types)
-  - [Troubleshooting](#troubleshooting)
-  - [Credits](#credits)
-  - [Author](#author)
+    - [Table of Contents](#table-of-contents)
+    - [Features](#features)
+    - [Compatibility](#compatibility)
+    - [Requirements](#requirements)
+    - [Installation](#installation)
+        - [Pre-Built](#pre-built)
+        - [From source](#from-source)
+    - [Getting started](#getting-started)
+    - [Start conditions](#start-conditions)
+    - [Split types](#split-types)
+    - [Troubleshooting](#troubleshooting)
+    - [Credits](#credits)
+    - [Author](#author)
 
 ## Features
 **Minimal setup required:** There's no need to create split images like with [AutoSplit](https://github.com/Toufool/Auto-Split). All split types are ready to use without any setup.
 
-**Capture OBS sources through virtual cam:** The auto splitter captures the game screen directly from a video source, like a capture card or an OBS virtual cam. Therefore you don't need to open a preview window to capture from.
+**Capture OBS sources through virtual cam:** The auto splitter captures the game screen directly from a video source, like a capture card or an OBS virtual cam. Therefore, you don't need to open a preview window to capture from.
 
 **Start timer automatically:** The timer can be started manually or automatically either when starting a new game or when setting the time and date (for DSTA).
 
@@ -55,18 +56,25 @@ It is recommended to create a virtual environment before installing dependencies
 Run `pip install -r requirements.txt` to install all dependencies.<br/>
 Run `python SMO_AutoSplit.py` to start the application.<br/>
 To build an executable, first change the `hookspath` in `win.spec` to match your environment.<br/>
-Run `pyinstaller -y win.spec` to start the build process. The executable will be located inside the `dist/win` directory.
+Run `pyinstaller -y win.spec` to start the build process. The executable will be located inside the `dist/win`
+directory.
 
 ## Getting started
 Check out the [getting started page](https://lordasdi.github.io/SMO_AutoSplit/getting_started.html) on the website.
 
+## Start conditions
+- **LiveSplit Timer Started**: The autosplitter starts when the LiveSplit timer is started.
+- **Start Game Button**: The autosplitter starts when the `Start` button is pressed to start a new game.
+- **Date Time Ok Button**: The autosplitter starts when the `OK` button in the `Date and Time` menu is pressed.
+- **First Split**: The autosplitter starts when the first split is activated.
+
 ## Split types
-|**Moon get** <br/> <img width=249 src="docs/videos/moon.gif"/>|**Storymoon get** <br/> <img width=249 src="docs/videos/moon story.gif"/>|**Multimoon get** <br/> <img width=249 src="docs/videos/moon multi.gif"/>|
-|-|-|-|
-|**Cap kingdom end** <br/> <img width=249 src="docs/videos/kingdom cap.gif"/>|**Kingdom end** <br/> <img width=249 src="docs/videos/kingdom odyssey.gif"/>|**Moon kingdom end** <br/> <img width=249 src="docs/videos/kingdom moon.gif"/>|
-|**Odyssey banner** <br/> <img width=249 src="docs/videos/odyssey.gif"/>|**World map fadeout** <br/> <img width=249 src="docs/videos/world map.gif"/>|**Cutscene skip** <br/> <img width=249 src="docs/videos/cutscene.gif"/>|
-|**Black screen** <br/> <img width=249 src="docs/videos/black screen.gif"/>|**White screen** <br/> <img width=249 src="docs/videos/white screen.gif"/>|**Subarea fadeout** <br/> <img width=249 src="docs/videos/subarea.gif"/>|
-|**Compass disappear** <br/> <img width=249 src="docs/videos/compass.gif"/>|||
+| **Moon get** <br/> <img width=249 src="docs/videos/moon.gif"/>               | **Storymoon get** <br/> <img width=249 src="docs/videos/moon story.gif"/>    | **Multimoon get** <br/> <img width=249 src="docs/videos/moon multi.gif"/>      |
+|------------------------------------------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| **Cap kingdom end** <br/> <img width=249 src="docs/videos/kingdom cap.gif"/> | **Kingdom end** <br/> <img width=249 src="docs/videos/kingdom odyssey.gif"/> | **Moon kingdom end** <br/> <img width=249 src="docs/videos/kingdom moon.gif"/> |
+| **Odyssey banner** <br/> <img width=249 src="docs/videos/odyssey.gif"/>      | **World map fadeout** <br/> <img width=249 src="docs/videos/world map.gif"/> | **Cutscene skip** <br/> <img width=249 src="docs/videos/cutscene.gif"/>        |
+| **Black screen** <br/> <img width=249 src="docs/videos/black screen.gif"/>   | **White screen** <br/> <img width=249 src="docs/videos/white screen.gif"/>   | **Subarea fadeout** <br/> <img width=249 src="docs/videos/subarea.gif"/>       |
+| **Compass disappear** <br/> <img width=249 src="docs/videos/compass.gif"/>   |                                                                              |                                                                                |
 
 ## Troubleshooting
 If you have problems with the auto splitter, check out the [faq section](https://lordasdi.github.io/SMO_AutoSplit/faq.html) on the website. Otherwise you can join the official [discord server](https://discord.gg/tuXWe4S7r2) to ask for help or [open an issue](https://github.com/LordAsdi/SMO_AutoSplit/issues) on GitHub.

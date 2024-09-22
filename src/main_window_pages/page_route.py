@@ -43,7 +43,8 @@ class PageRoute(QObject):
         self.start_conditions = {
             "livesplit": "LiveSplit Timer Started",
             "start_button": "Start Game Button",
-            "time_date_ok_button": "Date Time Ok Button"
+            "time_date_ok_button": "Date Time Ok Button",
+            "first_split": "First Split"
         }
         self.start_condition_dropdown.set_options(self.start_conditions)
         self.start_condition_dropdown.dropdown.currentTextChanged.connect(self.start_condition_changed)

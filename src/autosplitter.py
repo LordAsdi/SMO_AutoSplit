@@ -65,6 +65,7 @@ class Autosplitter(QThread):
         self.moon_count = 0
         self.activations = 0
         self.run_started = False
+        self.wait_for_first_split = False
         self.wait_for_reset = False
 
     def run(self):
@@ -166,7 +167,7 @@ class Autosplitter(QThread):
                 if not self.livesplit.connected:
                     self.sig_status_update.emit("Livesplit not connected", False)
                     return
-                if not self.run_started:
+                if not self.run_started and not self.wait_for_first_split:
                     if self.wait_for_reset:
                         self.sig_status_update.emit("Waiting for livesplit to reset", True)
                         return
@@ -192,6 +193,24 @@ class Autosplitter(QThread):
                             self.start_run()
                             print("Start")
                         return
+                    elif RouteHandler.route.start_condition == "first_split":
+                        self.current_split_index = 0
+                        self.current_component_index = 0
+                        self.wait_for_first_split = True
+
+                        try:
+                            self.current_split = RouteHandler.route.splits[self.current_split_index]
+                        except Exception as e:
+                            logging.exception(e)
+                            return
+
+                        try:
+                            self.current_component = self.current_split.components[self.current_component_index]
+                        except Exception as e:
+                            logging.exception(e)
+                            return
+
+                        self.sig_next_split.emit()
 
                 if self.current_split is None:
                     if len(RouteHandler.route.splits) > 0:
@@ -353,7 +372,7 @@ class Autosplitter(QThread):
             return
 
     def next_split(self):
-        if not self.run_started:
+        if not self.run_started and not self.wait_for_first_split:
             return
 
         print("Next Split")
@@ -362,7 +381,12 @@ class Autosplitter(QThread):
             return
 
         if self.current_split.split:
-            self.livesplit.split_timer()
+            if self.wait_for_first_split:
+                self.run_started = True
+                self.wait_for_first_split = False
+                self.livesplit.start_timer()
+            else:
+                self.livesplit.split_timer()
 
         self.current_split_index += 1
 
@@ -466,6 +490,7 @@ class Autosplitter(QThread):
         self.moon_count = 0
         self.activations = 0
         self.run_started = False
+        self.wait_for_first_split = False
         self.wait_for_reset = False
         self.sig_reset_splits.emit()
 

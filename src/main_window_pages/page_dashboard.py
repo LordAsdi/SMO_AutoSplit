@@ -144,6 +144,8 @@ class PageDashboard(QObject):
         if self.autosplitter.run_started:
             self.reload_splits = True
             return
+        else:
+            self.autosplitter.wait_for_first_split = False
 
         self.clear_splits()
 
