@@ -39,7 +39,7 @@ class MoonDetector:
         self.multi_get_time = 0
         self.multi_pause = 6.0
 
-        self.moon_tracker = cv2.legacy_TrackerMedianFlow.create()
+        self.moon_tracker = cv2.legacy.TrackerMedianFlow.create()
         self.first_moon_count = -1
         self.prev_moon_frame = np.zeros((23, 12, 3), dtype="uint8")
 
