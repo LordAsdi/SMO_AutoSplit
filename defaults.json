@@ -12,6 +12,10 @@
     "current_route": "",
     "show_preview": true,
     "livesplit_port": 16834,
+    "livesplit_port2_enabled": false,
+    "livesplit_port2": 16835,
+    "livesplit_port3_enabled": false,
+    "livesplit_port3": 16836,
     "fullscreen": false,
     "window_position": null,
     "window_size": [

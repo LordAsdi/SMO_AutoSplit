@@ -84,8 +84,15 @@ class MainWindow(QObject):
         self.autosplitter.sig_prev_split.connect(self.page_dashboard.prev_split)
         self.autosplitter.sig_reset_splits.connect(self.page_dashboard.reset_splits)
         self.autosplitter.livesplit.sig_connection_status.connect(self.set_livesplit_status)
+        self.autosplitter.livesplit.sig_connection_status2.connect(self.page_settings.set_port2_connection_status)
+        self.autosplitter.livesplit.sig_connection_status3.connect(self.page_settings.set_port3_connection_status)
         self.autosplitter.fps_counter.sig_fps_update.connect(self.set_fps)
         self.autosplitter.video_capture.sig_device_list_updated.connect(self.page_settings.device_list_updated)
+        self.page_settings.sig_livesplit_port_changed.connect(self.autosplitter.livesplit.reconnect_port)
+        self.page_settings.sig_livesplit_port2_enabled_changed.connect(self.autosplitter.livesplit.reconnect_port2)
+        self.page_settings.sig_livesplit_port2_changed.connect(self.autosplitter.livesplit.reconnect_port2)
+        self.page_settings.sig_livesplit_port3_enabled_changed.connect(self.autosplitter.livesplit.reconnect_port3)
+        self.page_settings.sig_livesplit_port3_changed.connect(self.autosplitter.livesplit.reconnect_port3)
 
         # Add menus
         self.add_menu("Dashboard", "btn_dashboard", "ui/resources/icons/home.png", is_top_menu=True)

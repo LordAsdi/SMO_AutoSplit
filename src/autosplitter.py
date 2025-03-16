@@ -49,7 +49,7 @@ class Autosplitter(QThread):
         self.fadeout_detector = FadeoutDetector()
         self.compass_detector = CompassDetector()
 
-        self.livesplit = Livesplit(16834)
+        self.livesplit = Livesplit()
         self.livesplit.sig_timer_reset.connect(self.reset_run)
         self.livesplit.start()
 
@@ -483,6 +483,7 @@ class Autosplitter(QThread):
 
     def reset_run(self):
         print("Reset")
+        self.livesplit.reset_timer()
         self.current_split_index = 0
         self.current_split = None
         self.current_component_index = 0
