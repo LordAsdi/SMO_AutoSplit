@@ -38,6 +38,7 @@ class MoonDetector:
 
         self.multi_get_time = 0
         self.multi_pause = 6.0
+        self.multi_timeout = 3.5
 
         self.moon_tracker = cv2.legacy.TrackerMedianFlow.create()
         self.first_moon_count = -1
@@ -85,7 +86,7 @@ class MoonDetector:
                         self.multi_get = True
                         self.multi_get_checked = False
                         self.multi_get_time = time.time()
-            elif moon and not self.moon_get_trigger:
+            elif (moon and not self.moon_get_trigger) or (self.multi_get and time.time() > self.multi_get_time + self.multi_pause + self.multi_timeout):
                 self.reset_moon_state()
 
         if moon or story:
