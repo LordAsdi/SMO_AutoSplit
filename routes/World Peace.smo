@@ -1,0 +1,357 @@
+{
+    "version": "0.2.4beta",
+    "name": "World Peace",
+    "start_condition": "start_button",
+    "splits": [
+        {
+            "name": "Cap",
+            "type": "cap_end",
+            "components": [
+                {
+                    "name": "cap_end",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Cascade",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Hariet",
+            "type": "moon_multi",
+            "components": [
+                {
+                    "name": "moon_multi",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Sand",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Lake",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Spewart",
+            "type": "moon_multi",
+            "components": [
+                {
+                    "name": "moon_multi",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Wooded",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Cloud",
+            "type": "cutscene_skip",
+            "components": [
+                {
+                    "name": "cutscene_skip",
+                    "activations": 6,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Lost",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Night Metro",
+            "type": "moon_multi",
+            "components": [
+                {
+                    "name": "moon_multi",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Musicians",
+            "type": "black_screen",
+            "components": [
+                {
+                    "name": "moon_story",
+                    "activations": 4,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Metro",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Snow",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Seaside",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Meat",
+            "type": "moon_multi",
+            "components": [
+                {
+                    "name": "moon_multi",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Luncheon",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Ruined",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Bunnies",
+            "type": "black_screen",
+            "components": [
+                {
+                    "name": "moon_story",
+                    "activations": 3,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Bowsers",
+            "type": "odyssey",
+            "components": [
+                {
+                    "name": "odyssey",
+                    "activations": 1,
+                    "min_moon_count": 0
+                },
+                {
+                    "name": "black_screen",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        },
+        {
+            "name": "Moon",
+            "type": "moon_end",
+            "components": [
+                {
+                    "name": "moon_end",
+                    "activations": 1,
+                    "min_moon_count": 0
+                }
+            ],
+            "split": true,
+            "reset_moon_count": true
+        }
+    ]
+}
