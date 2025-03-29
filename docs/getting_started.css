@@ -48,13 +48,13 @@ h2 {
 }
 
 .getStartedDiv img {
-    max-width: min(100%, 500px);
+    width: 500px;
     transition: 0.3s;
     transition-timing-function: ease-out;
 }
 
 .getStartedDiv video {
-    max-width: min(100%, 500px);
+    width: 500px;
     transition: 0.3s;
     transition-timing-function: ease-out;
 }
@@ -128,7 +128,7 @@ h2 {
     .getStartedDiv img:hover {
         transform: scale(1.4);
     }
-    
+
     .getStartedDiv video:hover {
         transform: scale(1.4);
     }
